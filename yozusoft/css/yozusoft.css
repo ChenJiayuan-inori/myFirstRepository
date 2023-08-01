@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(-220deg, rgb(255, 76, 169), rgb(243, 206, 212), rgb(221, 70, 240));
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+#loadvideo{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index:9999;
+    animation: myvideo 5s 1;
+}
+
+@keyframes myvideo
+{
+    80% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+}
+
+.shell{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+}
+
+.center{
+    width: 225px;
+    height: 225px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    position: absolute;
+    transition: 3s;
+    animation: load 5s 1;
+}
+
+.center>h1{
+    display: block;
+    position: absolute;
+    align-items: center;
+    width: 250px;
+    background-image:-webkit-linear-gradient(-240deg, #08bc1d,#09b5ea,#df5c1b);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    left: 50%;
+    font-size: 22.5px;
+    transform: translate(-45%, 450%);
+}
+
+.center>img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    animation: center 25s linear infinite;
+}
+
+@keyframes center{
+	0%{
+		transform: rotateZ(-60deg);/*从0度开始*/
+	}
+	100%{
+		transform: rotateZ(300deg);/*360度结束*/
+	}
+}
+
+@font-face{
+    font-family: myfont;
+    src: url('../fontstyle/myFont.ttf');
+}
+
+
+.card>h1{
+    font-family: myfont;
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 120px;
+    bottom: -40px;
+    
+}
+
+.card{
+    transition: 3s;
+    animation: load 5s 1;
+}
+
+@keyframes load{
+    0% {opacity: 0;}
+    85% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.card>img{
+    border: #fff solid 30px;
+    object-fit: contain;
+    box-shadow: 0 40px 90px #86c4f7;
+}
+
+#ayane{
+    display: block;
+    position: absolute;
+    transform: translate(-18%, -13%) scale(0.2) rotate(-20deg);
+    transition: .5s;
+}
+
+#ayane:hover{
+    display: block;
+    position: absolute;
+    transform: translate(-18%, -13%) scale(0.25) rotate(-10deg);
+    transition: .5s;
+}
+
+#noa{
+    display: block;
+    position: absolute;
+    transform: translate(-20%, 15%) scale(0.2) rotate(8deg);
+    transition: .5s;
+}
+
+#noa:hover{
+    display: block;
+    position: absolute;
+    transform: translate(-20%, 15%) scale(0.25) rotate(10deg);
+    transition: .5s;
+}
+
+#kagoya{
+    display: block;
+    position: absolute;
+    transform: translate(21%, 13%) scale(0.2) rotate(-5deg);
+    transition: .5s;
+}
+
+#kagoya:hover{
+    display: block;
+    position: absolute;
+    transform: translate(21%, 13%) scale(0.25) rotate(5deg);
+    transition: .5s;
+}
+
+#kurumi{
+    display: block;
+    position: absolute;
+    transform: translate(19%, -14%) scale(0.2) rotate(30deg);
+    transition: .5s;
+}
+
+#kurumi:hover{
+    display: block;
+    position: absolute;
+    transform: translate(19%, -14%) scale(0.25) rotate(12deg);
+    transition: .5s;
+}
+
+#ayane>h1{
+    background-image:-webkit-linear-gradient(-180deg, #9c3daa,#3f88ad,#4114b4);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+#noa>h1{
+    background-image:-webkit-linear-gradient(-75deg, #e1c41f,#4586d4,#2f4bb3);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+#kurumi>h1{
+    background-image:-webkit-linear-gradient(80deg, #ff7023,#e6328c,#1bd9c9);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+#kagoya>h1{
+    background-image:-webkit-linear-gradient(145deg, #365ad8,#f1fc5f,rgb(47, 189, 199));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.menu{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    z-index: 1;
+    background-image: linear-gradient(-180deg, rgb(253, 111, 29), rgb(35, 88, 246), rgb(93, 6, 147));
+    transform: translateX(-700px) translateY(-100px);
+    border-radius: 5px;
+}
+
+li{
+    display: list-item;
+    font-size: 30px;
+    text-align: center;
+    margin: 2px;
+    width: 45px;
+    height: 45px;
+    list-style-type: none;
+    transition: .5s;
+}
+
+a{
+    color: aliceblue;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.page_link{
+    display: block;
+    padding: 5px;
+}

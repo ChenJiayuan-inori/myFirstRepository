@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Love ----- 谷风李空战斗曲</title>
+    <link rel="stylesheet", href="./css/yozusoft.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <audio id="bgmusic" src="./audio/MakeLove.mp3" autoplay="autoplay" hidden="hidden" loop="loop"></audio>
+
+    <div id="loadvideo"> 
+        <video onclick="play();" muted="muted" id="videoplay" autoplay="autoplay" preload="auto">
+            <source src="./video/loadvideo.mp4" type="video/mp4">
+        </video>  
+    </div>   
+
+    <div class="shell">
+        <div class="menu">
+            <ul>
+                <li class="menuItem">
+                    <a href="./current.html" class="page_link">1</a>
+                </li>
+                <li class="menuItem">
+                    <a href="./past.html" class="page_link">2</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="center">
+            <img src="./img/center.jpg">
+            <h1>Ciallo～(∠・ω< )⌒☆​</h1>
+        </div>
+
+        <div class="card" id="noa" onmouseover="playmusic('noabg')" onmouseout="stopmusic('noabg')">
+            <audio src="./audio/noa.mp3" id="noabg" hidden="hidden"></audio>
+            <img src="./img/noa.jpg">
+            <h1>しらゆき のあ</h1>
+        </div>
+
+        <div class="card" id="ayane" onmouseover="playmusic('ayanebg')" onmouseout="stopmusic('ayanebg')">
+            <audio src="./audio/ayane.mp3" id="ayanebg" hidden="hidden"></audio>
+            <img src="./img/ayane.jpg">
+            <h1>たにかぜ　あまね</h1>
+        </div>
+
+        <div class="card" id="kurumi" onmouseover="playmusic('kurumibg')" onmouseout="stopmusic('kurumibg')">
+            <audio src="./audio/kurumi.mp3" id="kurumibg" hidden="hidden"></audio>
+            <img src="./img/kurumi.jpg">
+            <h1>こひばり くるみ</h1>
+        </div>
+
+        <div class="card" id="kagoya" onmouseover="playmusic('kagoyabg')" onmouseout="stopmusic('kagoyabg')">
+            <audio src="./audio/kagoya.mp3" id="kagoyabg" hidden="hidden"></audio>
+            <img src="./img/kagoya.jpg">
+            <h1>星河 かぐ耶</h1>
+        </div>
+    </div>
+
+    <!-- 背景音乐加载 -->
+    <script type="text/javascript">
+        function check(){
+            var bgmusic = document.getElementById("bgmusic");
+            console.log(bgmusic);
+            console.log(bgmusic.paused);
+            if(bgmusic.paused){
+                bgmusic.paused = false;
+                bgmusic.play();
+            }
+        }
+        setInterval("check()", 1);
+    </script>
+
+    <!-- 入场动画自动加载 -->
+    <script>  
+        
+        var ua = navigator.userAgent;
+        
+        var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+        
+        isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+        
+        isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+        
+        isMobile = isIphone || isAndroid;
+        
+        if(isMobile){
+        document.getElementById("videoplay").src= "./video/loadvideo.mp4";
+        }else{
+        document.getElementById("videoplay").src= "./video/loadvideo.mp4";
+        }
+        
+        
+        var md=document.getElementsByTagName("video")[0];
+            md.addEventListener("ended",function(){
+                var box = document.getElementById("loadvideo");
+                box.parentNode.removeChild(myVideo);
+            });
+        
+    </script>
+    
+    <!-- 入场动画自动播放js代码结束-->
+    <script>
+        document.getElementById('videoplay').play(); 
+        document.addEventListener("WeixinJSBridgeReady", function () {  
+        document.getElementById('videoplay').play();  
+        }, false); 
+    </script>
+
+    <!-- 入场动画屏蔽 -->
+    <script>
+        var model = document.getElementById("loadvideo");
+        setTimeout(function () { model.style.display = "none"; }, 5000);
+
+    </script>
+
+    <!-- 语音播报hover -->
+    <script>
+        function playmusic(music){
+            var mus = document.getElementById(music);
+            mus.play();
+        }
+
+        function stopmusic(music){
+            var mus = document.getElementById(music);
+            mus.pause();
+            mus.currentTime = 0;
+        }
+    </script>
+</body>
+</html>

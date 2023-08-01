@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yozusoft</title>
+
+    <link rel="stylesheet", href="./css/galgame.css">
+</head>
+<body>
+    <div id="loadvideo"> 
+        <video onclick="play();" muted="muted" id="videoplay" autoplay="autoplay" preload="auto">
+            <source src="./video/loadvideo.mp4" type="video/mp4">
+        </video>  
+    </div>  
+
+    <div class="menu">
+        <ul>
+            <li class="menuItem">
+                <a href="./current.html" class="page_link">1</a>
+            </li>
+            <li class="menuItem">
+                <a href="./past.html" class="page_link">2</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="shell">
+
+        <div class="card" onmouseover="playmusic('kannabg')" onmouseout="stopmusic('kannabg')">
+            <div class="box" id="kanna">
+                <img src="./img/akizukikanna.png">
+            </div>
+            <div class="character">
+                <img src="./img/akizukikanna.png">
+            </div>
+            <audio src="./audio/kanna.mp3" id="kannabg" hidden="hidden"></audio>
+            <h4>明月栞那</h4>
+        </div>
+
+        <div class="card" onmouseover="playmusic('megurubg')" onmouseout="stopmusic('megurubg')">
+            <div class="box" id="meguru">
+                <img src="./img/meguru.png">
+            </div>
+            <div class="character">
+                <img src="./img/meguru.png">
+            </div>
+            <audio src="./audio/meguru.mp3" id="megurubg" hidden="hidden"></audio>
+            <h4>因璠巡</h4>
+        </div>
+
+        <div class="card" onmouseover="playmusic('nanamibg')" onmouseout="stopmusic('nanamibg')">
+            <div class="box" id="nanami">
+                <img src="./img/nanami.png">
+            </div>
+            <div class="character">
+                <img src="./img/nanami.png">
+            </div>
+            <audio src="./audio/nanami.mp3" id="nanamibg" hidden="hidden"></audio>
+            <h4>在原七海</h4>
+        </div>
+
+        <div class="card" onmouseover="playmusic('natsumebg')" onmouseout="stopmusic('natsumebg')">
+            <div class="box" id="natsume">
+                <img src="./img/nazume.png">
+            </div>
+            <div class="character">
+                <img src="./img/nazume.png">
+            </div>
+            <audio src="./audio/natusme.mp3" id="natsumebg" hidden="hidden"></audio>
+            <h4>四季夏目</h4>
+        </div>
+
+        <div class="card" onmouseover="playmusic('nenebg')" onmouseout="stopmusic('nenebg')">
+            <div class="box" id="nene">
+                <img src="./img/nene.png">
+            </div>
+            <div class="character">
+                <img src="./img/nene.png">
+            </div>
+            <audio src="./audio/nene.mp3" id="nenebg" hidden="hidden"></audio>
+            <h4>绫地宁宁</h4>
+        </div>
+
+        <div class="card" onmouseover="playmusic('nozomibg')" onmouseout="stopmusic('nozomibg')">
+            <div class="box" id="nozomi">
+                <img src="./img/nozomi.png">
+            </div>
+            <div class="character">
+                <img src="./img/nozomi.png">
+            </div>
+            <audio src="./audio/nozomi.mp3" id="nozomibg" hidden="hidden"></audio>
+            <h4>墨染希</h4>
+        </div>
+
+        <div class="card" onmouseover="playmusic('yoshinobg')" onmouseout="stopmusic('yoshinobg')">
+            <div class="box" id="yoshino">
+                <img src="./img/yoshino.png">
+            </div>
+            <div class="character">
+                <img src="./img/yoshino.png">
+            </div>
+            <audio src="./audio/yoshino.mp3" id="yoshinobg" hidden="hidden"></audio>
+            <h4>朝武芳乃</h4>
+        </div>
+    </div>
+
+    <!-- 入场动画自动加载 -->
+    <script>  
+    
+        var ua = navigator.userAgent;
+        
+        var ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+        
+        isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+        
+        isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+        
+        isMobile = isIphone || isAndroid;
+        
+        if(isMobile){
+        document.getElementById("videoplay").src= "./video/loadvideo.mp4";
+        }else{
+        document.getElementById("videoplay").src= "./video/loadvideo.mp4";
+        }
+        
+        
+        var md=document.getElementsByTagName("video")[0];
+            md.addEventListener("ended",function(){
+                var box = document.getElementById("loadvideo");
+                box.parentNode.removeChild(myVideo);
+            });
+        
+    </script>
+    
+    <!-- 入场动画自动播放js代码结束-->
+    <script>
+        document.getElementById('videoplay').play(); 
+        document.addEventListener("WeixinJSBridgeReady", function () {  
+        document.getElementById('videoplay').play();  
+        }, false); 
+    </script>
+
+    <!-- 入场动画屏蔽 -->
+    <script>
+        var model = document.getElementById("loadvideo");
+        setTimeout(function () { model.style.display = "none"; }, 5000);
+
+    </script>
+
+    <script>
+        function playmusic(music){
+            var mus = document.getElementById(music);
+            mus.play();
+        }
+
+        function stopmusic(music){
+            var mus = document.getElementById(music);
+            mus.pause();
+            mus.currentTime = 0;
+        }
+</script>
+</body>
+</html>

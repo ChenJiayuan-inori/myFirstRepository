@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("../img/background.jpg");
+    background-size: 100%;
+}
+
+#loadvideo{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index:9999;
+    animation: myvideo 5s 1;
+}
+
+@keyframes myvideo
+{
+    80% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+video{
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+}
+
+.shell{
+    width: 1700px;
+    margin: 0 auto;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    flex-basis: 7%;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:not(:nth-child(1)){
+    margin-left: 30px;
+}
+
+.card:hover{
+    overflow: initial;
+}
+
+.box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .1s cubic-bezier(.6,1.12,.88,.94);
+    overflow: hidden;
+    border-radius: 10px;
+    /* background-image: linear-gradient(180deg, rgb(234, 122, 240), rgb(145, 55, 193), rgba(19, 15, 15, 0.668)); */
+}
+
+#kanna{
+    background-image: linear-gradient(180deg, rgb(6, 191, 247), rgb(29, 249, 186), rgba(4, 140, 219, 0.268));
+}
+#meguru{
+    background-image: linear-gradient(180deg, rgb(255, 137, 68), rgb(255, 217, 114), rgba(255, 54, 14, 0.268));
+}
+#nanami{
+    background-image: linear-gradient(180deg, rgb(255, 238, 1), rgb(255, 243, 81), rgba(192, 128, 0, 0.268));
+}
+#natsume{
+    background-image: linear-gradient(180deg, rgb(155, 95, 239), rgb(69, 66, 239), rgba(96, 28, 128, 0.268));
+}   
+#nene{
+    background-image: linear-gradient(180deg, rgb(192, 92, 165), rgb(156, 32, 181), rgba(221, 43, 64, 0.268));
+}
+#nozomi{
+    background-image: linear-gradient(180deg, rgb(41, 224, 35), rgb(42, 222, 213), rgba(220, 216, 26, 0.268));
+}
+#yoshino{
+    background-image: linear-gradient(180deg, rgb(219, 140, 130), rgb(238, 140, 131), rgba(231, 51, 51, 0.996));
+}
+
+.box>img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    position: relative;                                 /* 相对位置 */
+    transform: translate(60%, 10%) scale(3);            /* translate平移 scale缩放 */
+    z-index: -1;                                        /* z轴图层后移1个单位 */
+}
+
+.card:hover>.box img{
+    opacity: 0;                                         /* 不透明度 */
+}
+
+.card:hover>.box {
+    transform: scaleY(1.5);
+    background-image: initial;
+    background-color: #e0c6ef;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.card>h4{
+    position: absolute;
+    display: block;
+    width: 120px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -35%);
+    font-size: 26px;
+    z-index: 100;
+    transition: .2s;
+}
+
+.card:hover h4{
+    color: #fff;
+    transform: translate(-50%, 250%);
+}
+
+.card:hover .character>img{
+    opacity: 1;
+}
+
+.card>.character{
+    position: absolute;
+    top: 0px;
+    left: -145px;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.character>img{
+    width: 400px;
+    height: 820px;
+    object-fit: contain;
+    opacity: 0;
+    transition: all .3s;
+    position: relative;
+    z-index: -10;
+}
+
+.menu{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    z-index: 100;
+    background-image: linear-gradient(-180deg, rgb(253, 111, 29), rgb(35, 88, 246), rgb(93, 6, 147));
+    transform: translateX(-700px) translateY(-100px);
+    border-radius: 5px;
+}
+
+li{
+    display: list-item;
+    font-size: 30px;
+    text-align: center;
+    margin: 2px;
+    width: 45px;
+    height: 45px;
+    list-style-type: none;
+    transition: .5s;
+    z-index: 200;
+}
+
+a{
+    color: aliceblue;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.page_link{
+    display: block;
+    padding: 5px;
+}
